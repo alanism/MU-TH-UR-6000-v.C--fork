@@ -1,5 +1,5 @@
 {
-  "name": "MU-TH-UR 7000 - fork ",
+  "name": "MU-TH-UR 6000",
   "description": "A local-first, read-only telemetry instrument for visualizing SQLite export data. Features offline processing via WebAssembly and D3.js visualizations.",
   "requestFramePermissions": []
 }

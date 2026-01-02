@@ -27,7 +27,8 @@ const MAX_WORKER_RESTARTS = 1;
 
 // Status codes are used for data-status attribute on #status-text
 const STATUS = {
-  IDLE: "IDLE", // demo data shown or empty, waiting for file
+  IDLE: "IDLE", // empty, waiting for file
+  SYNTHETIC: "SYNTHETIC", // demo data loaded
   RECEIVED: "RECEIVED",
   PROCESSING: "PROCESSING",
   VALID: "VALID",
@@ -156,10 +157,10 @@ function bootstrap() {
   initWorker();
   setupUI();
 
-  // 3) Demo data (kept intentionally) but status is IDLE
+  // 3) Demo data (kept intentionally) with strict boot message
   state.data = generateSyntheticData();
   scheduleRender();
-  ui.setStatus(STATUS.IDLE, "Waiting for data input", "System ready. Load local EMR export.");
+  ui.setStatus(STATUS.SYNTHETIC, "SYNTHETIC SIGNAL — LOAD DATABASE TO BEGIN", "System ready. Load local EMR export.");
 }
 
 function setupUI() {
